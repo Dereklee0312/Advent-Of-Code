@@ -1,0 +1,15 @@
+/home/derek_lee/Projects/AOC/D3/bin/Debug/net6.0/D3
+/home/derek_lee/Projects/AOC/D3/bin/Debug/net6.0/D3.deps.json
+/home/derek_lee/Projects/AOC/D3/bin/Debug/net6.0/D3.runtimeconfig.json
+/home/derek_lee/Projects/AOC/D3/bin/Debug/net6.0/D3.dll
+/home/derek_lee/Projects/AOC/D3/bin/Debug/net6.0/ref/D3.dll
+/home/derek_lee/Projects/AOC/D3/bin/Debug/net6.0/D3.pdb
+/home/derek_lee/Projects/AOC/D3/obj/Debug/net6.0/D3.csproj.AssemblyReference.cache
+/home/derek_lee/Projects/AOC/D3/obj/Debug/net6.0/D3.GeneratedMSBuildEditorConfig.editorconfig
+/home/derek_lee/Projects/AOC/D3/obj/Debug/net6.0/D3.AssemblyInfoInputs.cache
+/home/derek_lee/Projects/AOC/D3/obj/Debug/net6.0/D3.AssemblyInfo.cs
+/home/derek_lee/Projects/AOC/D3/obj/Debug/net6.0/D3.csproj.CoreCompileInputs.cache
+/home/derek_lee/Projects/AOC/D3/obj/Debug/net6.0/D3.dll
+/home/derek_lee/Projects/AOC/D3/obj/Debug/net6.0/ref/D3.dll
+/home/derek_lee/Projects/AOC/D3/obj/Debug/net6.0/D3.pdb
+/home/derek_lee/Projects/AOC/D3/obj/Debug/net6.0/D3.genruntimeconfig.cache
