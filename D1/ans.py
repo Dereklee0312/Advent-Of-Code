@@ -1,3 +1,8 @@
+# Advent Of Code
+# Author: Derek Lee
+# Language: Python
+# Day: 1
+
 # Part 1
 calList = []
 totalCal = 0
