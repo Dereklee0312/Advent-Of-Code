@@ -75,25 +75,63 @@ namespace AOC3
             }
         }
 
+        // Part 1:
+        // public void ReadFile(string fileName)
+        // {
+        //     string[] lines = File.ReadAllLines(fileName);
+        //         var first = line.Substring(0, (int)(line.Length / 2));
+        //         var last = line.Substring((int)(line.Length / 2), (int)(line.Length / 2));
+        //         Common += this.CheckCommon(first, last);
+        //     }
+        //     Console.WriteLine(Common);
+        // }
+
+        // public string CheckCommon(string first, string second, string third)
+        // {
+        //     string common = "";
+        //     for (int i = 0; i < first.Length; i++)
+        //     {
+        //         if (second.IndexOf(first[i]) != -1)
+        //         {
+        //             common = first[i].ToString();
+        //         }
+        //     }
+        //     return common;
+        // }
+
+        // Part 2:
         public void ReadFile(string fileName)
         {
-            // string[] contents;
+            List<string> contents = new List<string>();
+            int count = 0;
             string[] lines = File.ReadAllLines(fileName);
             foreach (var line in lines)
             {
-                var first = line.Substring(0, (int)(line.Length / 2));
-                var last = line.Substring((int)(line.Length / 2), (int)(line.Length / 2));
-                Common += this.CheckCommon(first, last);
+                if (count % 3 == 0)
+                {
+                    if (count != 0)
+                    {
+                        Common += this.CheckCommon(contents[0], contents[1], contents[2]);
+                    }
+                    contents.Clear();
+                    contents.Add(line);
+                }
+                else
+                {
+                    contents.Add(line);
+                }
+                count++;
             }
-            Console.WriteLine(Common);
+            Common += this.CheckCommon(contents[0], contents[1], contents[2]);
         }
 
-        public string CheckCommon(string first, string second)
+        // Part 2:
+        public string CheckCommon(string first, string second, string third)
         {
             string common = "";
             for (int i = 0; i < first.Length; i++)
             {
-                if (second.IndexOf(first[i]) != -1)
+                if (second.IndexOf(first[i]) != -1 && third.IndexOf(first[i]) != -1)
                 {
                     common = first[i].ToString();
                 }
