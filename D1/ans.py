@@ -14,7 +14,7 @@ with open("test.txt") as f:
         else:
             totalCal += int(line)
 
-print(max(calList))
+print(f'Elf with most calories has: {max(calList)}')
 
 # Part 2
-print(sum(sorted(calList, reverse=True)[0:3]))
+print(f'Sum of 3 elves with most calories: {sum(sorted(calList, reverse=True)[0:3])}')
