@@ -2,6 +2,7 @@
 title: "Day 1 of Advent of Code"
 author: Derek Lee
 date: 1 December 2022
+language: Python
 ---
 
 # Part 1
