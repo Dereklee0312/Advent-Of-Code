@@ -23,7 +23,6 @@ def moveCrate2(_num, _from, _to, _lst):
     newLst = []
     for i in range(_num):
         newLst.append(_lst[_from - 1].pop())
-        # _lst[_to - 1].append(_lst[_from - 1].pop())
     for i in range(_num):
         _lst[_to - 1].append(newLst.pop())
 
