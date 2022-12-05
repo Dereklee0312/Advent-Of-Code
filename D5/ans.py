@@ -13,22 +13,35 @@ def genList(fileName):
             count += 1
     return numList
 
-def moveCrate(_num, _from, _to, _lst):
+def moveCrate1(_num, _from, _to, _lst):
     for i in range(_num):
         _lst[_to - 1].append(_lst[_from - 1].pop())
 
     return _lst
 
-lst = genList("test.txt")
+def moveCrate2(_num, _from, _to, _lst):
+    newLst = []
+    for i in range(_num):
+        newLst.append(_lst[_from - 1].pop())
+        # _lst[_to - 1].append(_lst[_from - 1].pop())
+    for i in range(_num):
+        _lst[_to - 1].append(newLst.pop())
 
-with open("test.txt") as f:
-    for line in f:
-        if line.startswith("m"):
-            num = [int(s) for s in line.split() if s.isdigit()]
-            lst = moveCrate(num[0], num[1], num[2], lst)
+    return _lst
 
-string = ""
-for i in lst:
-    string += i.pop()
 
-print(string)
+if __name__ == "__main__":
+    lst = genList("test.txt")
+
+    with open("test.txt") as f:
+        for line in f:
+            if line.startswith("m"):
+                num = [int(s) for s in line.split() if s.isdigit()]
+                # lst = moveCrate1(num[0], num[1], num[2], lst)
+                lst = moveCrate2(num[0], num[1], num[2], lst)
+
+    string = ""
+    for i in lst:
+        string += i.pop()
+
+    print(string)
