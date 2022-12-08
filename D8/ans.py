@@ -1,3 +1,4 @@
+# PART 1
 grid = []
 file = "input.txt"
 
