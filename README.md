@@ -7,5 +7,6 @@ Language: Python, C#
 # First Attempt of AOC
 
 # TODO
-
-Explain thought process for each answer
+- Explain the thought process for each answer
+- Optimize code
+- Reformat if possible
