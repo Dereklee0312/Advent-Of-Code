@@ -10,6 +10,8 @@ with open(file) as f:
 """
 Gotta check until the edge -.-
 """
+
+
 def checkRow(grid, lst, row, col):
     rowLst = [grid[row][i] for i in lst]
     if grid[row][col] > max(rowLst):
