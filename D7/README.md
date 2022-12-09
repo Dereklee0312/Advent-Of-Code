@@ -5,6 +5,11 @@ date: 7 December 2022
 language: Python
 ---
 
+# NOTE
+- Day 7 is incomplete, will go over it afterwards
+- ans3.py is sample answer found on YT
+- Will probably take inspiration from it and do it my way
+
 # Part 1
 You can hear birds chirping and raindrops hitting leaves as the expedition proceeds. Occasionally, you can even hear much louder sounds in the distance; how big do the animals get out here, anyway?
 
