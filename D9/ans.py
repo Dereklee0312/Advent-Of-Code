@@ -12,6 +12,16 @@ with open(filename) as f:
         lines.append(line.strip())
 
 H, T = [0, 0], [0, 0]
+k1, k2, k3, k4, k5, k6, k7, k8 = (
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+)
 
 
 def updateHead(head, direction):
@@ -75,7 +85,9 @@ def moveDiagonally(head, tail):
     """
     motions = {"NE": [-1, 1], "NW": [-1, -1], "SE": [1, 1], "SW": [1, -1]}
     targets = [-2, -1, 1, 2]
-    absCoords = [] # List of absolute coordinates where target will be according to position of tail
+    absCoords = (
+        []
+    )  # List of absolute coordinates where target will be according to position of tail
     targetCoords = []
     for i in targets:
         for j in targets:
@@ -109,7 +121,17 @@ for motion in lines:
     num = int(motion.split()[1])
     for i in range(num):
         updateHead(H, direction)
-        updateTail(H, T)
-        Locations.append((T[0], T[1])) # Appending in form of tuples to enable use of set
+        updateTail(H, k1)
+        updateTail(k1, k2)
+        updateTail(k2, k3)
+        updateTail(k3, k4)
+        updateTail(k4, k5)
+        updateTail(k5, k6)
+        updateTail(k6, k7)
+        updateTail(k7, k8)
+        updateTail(k8, T)
+        Locations.append(
+            (T[0], T[1])
+        )  # Appending in form of tuples to enable use of set
 
 print(len(set(Locations)))
