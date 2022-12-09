@@ -11,18 +11,6 @@ with open(filename) as f:
     for line in f:
         lines.append(line.strip())
 
-H, T = [0, 0], [0, 0]
-k1, k2, k3, k4, k5, k6, k7, k8 = (
-    [0, 0],
-    [0, 0],
-    [0, 0],
-    [0, 0],
-    [0, 0],
-    [0, 0],
-    [0, 0],
-    [0, 0],
-)
-
 
 def updateHead(head, direction):
     motions = {"R": [0, 1], "L": [0, -1], "U": [-1, 0], "D": [1, 0]}
@@ -115,7 +103,32 @@ def moveDiagonally(head, tail):
                 tail[1] += motions["SW"][1]
 
 
+H, T = [0, 0], [0, 0]
+k1, k2, k3, k4, k5, k6, k7, k8 = (
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+)
+
 Locations = []
+
+# PART 1
+# for motion in lines:
+#     direction = motion.split()[0]
+#     num = int(motion.split()[1])
+#     for i in range(num):
+#         updateHead(H, direction)
+#         updateTail(H, T)
+#         Locations.append(
+#             (T[0], T[1])
+#         )  # Appending in form of tuples to enable use of set
+
+# PART 2
 for motion in lines:
     direction = motion.split()[0]
     num = int(motion.split()[1])
