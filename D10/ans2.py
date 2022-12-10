@@ -11,10 +11,12 @@ with open(filename) as f:
     for line in f:
         lines.append(line.strip())
 
+
 def draw(grid, cycle, x):
     xLst = [x, x - 1, x + 1]
-    if (cycle%40) in xLst:
-        grid[cycle//40][cycle%40] = "#"
+    if (cycle % 40) in xLst:
+        grid[cycle // 40][cycle % 40] = "#"
+
 
 grid = []
 for _ in range(6):
