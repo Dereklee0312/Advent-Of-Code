@@ -16,11 +16,15 @@ def parseFile():
     return lines
 
 
-def multiply(num1, num2):
+def multiply(num1, num2, divider):
+    # if num1 % divider == 0 or num2 % divider == 0:
+    #     return divider
     return num1 * num2
 
 
-def add(num1, num2):
+def add(num1, num2, divider):
+    # if (num1 + num2) % divider == 0:
+    #     return divider
     return num1 + num2
 
 
@@ -59,26 +63,14 @@ class Monkey:
         else:
             self.num = None
 
-    # def afterInspect(self, item):
-    #     if self.num == None:
-    #         num = item
-    #     else:
-    #         num = self.num
-    #
-    #     newLvl = self.op(item, num)
-    #
-    #     return newLvl
-    # return math.floor(newLvl/3)
-
     def playTurn(self):
-        # if len(self.items) == 0:
-        #     return None, None
-        # else:
         item = self.items.pop(0)
         num = item if self.num == None else self.num
 
         self.turns += 1
-        lvl = self.op(item, num)
+        lvl = self.op(item, num, self.divider)
+        # print(self.divider)
+        # lvl = math.floor(lvl/self.divider)
 
         if lvl % self.divider == 0:
             return self.tMonk, lvl

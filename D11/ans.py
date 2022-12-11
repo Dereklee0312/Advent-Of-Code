@@ -34,16 +34,10 @@ for index, cmd in enumerate(lines):
 monkey = Monkey(monkIndex, items, operation, divider, tMonk, fMonk)
 monkLst.addMonk(monkey)
 
-# for i in range(20):
 roundLst = [19, 999, 1999, 2999, 3999, 4999, 5999, 6999, 7999, 8999, 9999]
-for i in range(10000):
+for i in range(20):
     # print(i)
     monkLst.playRound()
-    # if i in roundLst:
-    #     turnLst = [i.turns for i in monkLst.monks.values()]
-    #     print(i, turnLst)
-
 
 turnLst = sorted([i.turns for i in monkLst.monks.values()], reverse=True)
 print(turnLst[0] * turnLst[1])
-# print(turnLst)
