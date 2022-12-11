@@ -16,26 +16,28 @@ def parseFile():
     return lines
 
 
+def multiply(num1, num2):
+    return num1 * num2
+
+
+def add(num1, num2):
+    return num1 + num2
+
+
 class MonkeyLst:
     def __init__(self):
-        self.monks = []
+        self.numMonks = 0
+        self.monks = {}
 
     def addMonk(self, monkObj):
-        self.monks.append(monkObj)
-
-    def getMonk(self, index):
-        for i in self.monks:
-            if i.index == index:
-                return i
+        self.monks[self.numMonks] = monkObj
+        self.numMonks += 1
 
     def playRound(self):
-        for monkeys in self.monks:
-            for i in range(len(monkeys.items)):
+        for monkeys in self.monks.values():
+            for _ in range(len(monkeys.items)):
                 target, lvl = monkeys.playTurn()
-                if target != None:
-                    targetMonk = self.getMonk(target)
-                    targetMonk.items.append(lvl)
-
+                self.monks[target].items.append(lvl)
 
 
 class Monkey:
@@ -47,44 +49,38 @@ class Monkey:
         self.tMonk = tMonk
         self.fMonk = fMonk
         self.turns = 0
-
-    def checkTest(self, lvl):
-        if lvl % self.divider == 0:
-            return True
-        return False
-
-    def afterInspect(self, item):
         if "+" in self.operation:
-            op = "+"
+            self.op = add
         else:
-            op = "*"
+            self.op = multiply
 
         if self.operation.split()[-1].isdigit():
-            if op == "+":
-                num = int(self.operation.split("+")[1])
-            else:
-                num = int(self.operation.split("*")[1])
+            self.num = int(self.operation.split()[-1])
         else:
-            num = item
+            self.num = None
 
-        if op == "+":
-            newLvl = item + num
-        else:
-            newLvl = item * num
-
-        return math.floor(newLvl/3)
+    # def afterInspect(self, item):
+    #     if self.num == None:
+    #         num = item
+    #     else:
+    #         num = self.num
+    #
+    #     newLvl = self.op(item, num)
+    #
+    #     return newLvl
+    # return math.floor(newLvl/3)
 
     def playTurn(self):
-        if len(self.items) == 0:
-            return None, None
+        # if len(self.items) == 0:
+        #     return None, None
+        # else:
+        item = self.items.pop(0)
+        num = item if self.num == None else self.num
+
+        self.turns += 1
+        lvl = self.op(item, num)
+
+        if lvl % self.divider == 0:
+            return self.tMonk, lvl
         else:
-            self.turns += 1
-            item = self.items.pop(0)
-            lvl = self.afterInspect(item)
-
-            if self.checkTest(lvl):
-                monk = self.tMonk
-            else:
-                monk = self.fMonk
-
-        return monk, lvl
+            return self.fMonk, lvl
