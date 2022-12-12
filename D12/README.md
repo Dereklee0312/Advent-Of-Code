@@ -4,10 +4,7 @@ Date: 12-12-2022
 Language: Python
 ---
 
-# Note
-- Some values such as maxRow, maxCol and starting position are hard-coded for simplicity
-
-# Possible Optimization
+# Optimization
 
 > Logic from: [William Y. Feng](https://www.youtube.com/watch?v=sBe_7Mzb47Y)
 

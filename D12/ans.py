@@ -2,7 +2,7 @@
 
 from helper import *
 
-sRow, sCol, maxRow, maxCol, lines = parseFile()
+lines = parseFile()
 
 dict = createDict()
 
@@ -15,17 +15,19 @@ for i, line in enumerate(lines):
     for j, a in enumerate(line):
         point = Point(a, dict[a], i, j)
         lst.append(point)
+        if a == "S":
+            sRow = i
+            sCol = j
+        elif a == "E":
+            eRow = i
+            eCol = j
     grid.append(lst)
+
+maxRow = len(grid)
+maxCol = len(grid[0])
 
 posLocations = []
 
-for i in range(maxRow):
-    for j in range(maxCol):
-        if grid[i][j].char == "a" or grid[i][j].char == "S":
-            count = move(grid, i, j, maxRow, maxCol)
-            if count != None:
-                posLocations.append(count)
-            resetGrid(grid, maxRow, maxCol)
-
 print("Part 1: ", move(grid, sRow, sCol, maxRow, maxCol))
-print("Part 2: ", min(posLocations))
+resetGrid(grid, maxRow, maxCol)
+print("Part 2: ", move2(grid, eRow, eCol, maxRow, maxCol))
