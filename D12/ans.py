@@ -17,4 +17,15 @@ for i, line in enumerate(lines):
         lst.append(point)
     grid.append(lst)
 
-print(move(grid, sRow, sCol, maxRow, maxCol))
+posLocations = []
+
+for i in range(maxRow):
+    for j in range(maxCol):
+        if grid[i][j].char == "a" or grid[i][j].char == "S":
+            count = move(grid, i, j, maxRow, maxCol)
+            if count != None:
+                posLocations.append(count)
+            resetGrid(grid, maxRow, maxCol)
+
+print("Part 1: ", move(grid, sRow, sCol, maxRow, maxCol))
+print("Part 2: ", min(posLocations))
