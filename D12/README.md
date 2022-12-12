@@ -4,6 +4,9 @@ Date: 12-12-2022
 Language: Python
 ---
 
+# Note
+- Some values such as maxRow, maxCol and starting position are hard-coded for simplicity
+
 # Part 1
 
 You try contacting the Elves using your handheld device, but the river you're following must be too low to get a decent signal.
