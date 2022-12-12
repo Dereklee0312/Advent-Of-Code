@@ -7,6 +7,12 @@ Language: Python
 # Note
 - Some values such as maxRow, maxCol and starting position are hard-coded for simplicity
 
+# Possible Optimization
+
+> Logic from: [William Y. Feng](https://www.youtube.com/watch?v=sBe_7Mzb47Y)
+
+- Instead of iterating through the grid and finding shortest path from each point with elevation `a`, start from `end` and find shortest path to first point with elevation `a`
+
 # Part 1
 
 You try contacting the Elves using your handheld device, but the river you're following must be too low to get a decent signal.
