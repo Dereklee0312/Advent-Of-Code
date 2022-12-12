@@ -88,7 +88,7 @@ def move(grid, curRow, curCol, maxRow, maxCol):
 
     while queue:
         """
-        Keeping track of count and current point within Queue until target is reached
+        Keeping track of current count and current point until target is reached
         """
         start, count = queue.pop(0)
 
