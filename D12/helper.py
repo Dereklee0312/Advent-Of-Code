@@ -87,6 +87,7 @@ def move(grid, curRow, curCol, maxRow, maxCol):
                     next.visited = True
                     queue.append((next, count + 1))
 
+
 def resetGrid(grid, maxRow, maxCol):
     for i in range(maxRow):
         for j in range(maxCol):
