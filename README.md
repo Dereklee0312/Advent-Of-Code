@@ -12,9 +12,9 @@ Language: Python, C#
 - Reformat if possible
 
 # Questions that gave me trouble
-- Day 7
+- Day 7 [Incomplete]
     - Part 1
     - Part 2
 
-- Day 11
+- Day 11 [Got help from yt]
     - Part 2

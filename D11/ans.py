@@ -1,9 +1,16 @@
 #!/usr/bin/python3
 
+# module to deep copy a list
+import copy
+
 from helper import *
 
-
 lines = parseFile()
+
+lcm = 1
+for cmd in lines:
+    if "divisible" in cmd:
+        lcm *= int(cmd.split()[-1])
 
 stop = 5
 start = 0
@@ -26,18 +33,27 @@ for index, cmd in enumerate(lines):
             fMonk = int(cmd.split()[-1])
         start += 1
     else:
-        monkey = Monkey(monkIndex, items, operation, divider, tMonk, fMonk)
+        monkey = Monkey(monkIndex, items, operation, divider, tMonk, fMonk, lcm)
         monkLst.addMonk(monkey)
         start = 0
         stop += 7
 
-monkey = Monkey(monkIndex, items, operation, divider, tMonk, fMonk)
-monkLst.addMonk(monkey)
+else:
+    monkey = Monkey(monkIndex, items, operation, divider, tMonk, fMonk, lcm)
+    monkLst.addMonk(monkey)
 
-roundLst = [19, 999, 1999, 2999, 3999, 4999, 5999, 6999, 7999, 8999, 9999]
+monkLst2 = copy.deepcopy(monkLst)
+
+# PART 1
 for i in range(20):
-    # print(i)
-    monkLst.playRound()
+    monkLst.playRound("1")
 
 turnLst = sorted([i.turns for i in monkLst.monks.values()], reverse=True)
-print(turnLst[0] * turnLst[1])
+print("Part 1:", turnLst[0] * turnLst[1])
+
+# PART 2
+for i in range(10000):
+    monkLst2.playRound("2")
+
+turnLst = sorted([i.turns for i in monkLst2.monks.values()], reverse=True)
+print("Part 2:", turnLst[0] * turnLst[1])

@@ -37,15 +37,15 @@ class MonkeyLst:
         self.monks[self.numMonks] = monkObj
         self.numMonks += 1
 
-    def playRound(self):
+    def playRound(self, part):
         for monkeys in self.monks.values():
             for _ in range(len(monkeys.items)):
-                target, lvl = monkeys.playTurn()
+                target, lvl = monkeys.playTurn(part)
                 self.monks[target].items.append(lvl)
 
 
 class Monkey:
-    def __init__(self, index, items, operation, divider, tMonk, fMonk):
+    def __init__(self, index, items, operation, divider, tMonk, fMonk, lcm):
         self.index = index
         self.items = items
         self.operation = operation
@@ -53,6 +53,7 @@ class Monkey:
         self.tMonk = tMonk
         self.fMonk = fMonk
         self.turns = 0
+        self.lcm = lcm
         if "+" in self.operation:
             self.op = add
         else:
@@ -63,16 +64,17 @@ class Monkey:
         else:
             self.num = None
 
-    def playTurn(self):
+    def playTurn(self, part):
+        division = 3 if part == "1" else 1
         item = self.items.pop(0)
         num = item if self.num == None else self.num
 
         self.turns += 1
         lvl = self.op(item, num, self.divider)
         # print(self.divider)
-        # lvl = math.floor(lvl/self.divider)
+        lvl = math.floor(lvl/division)
 
         if lvl % self.divider == 0:
-            return self.tMonk, lvl
+            return self.tMonk, lvl % self.lcm
         else:
-            return self.fMonk, lvl
+            return self.fMonk, lvl % self.lcm

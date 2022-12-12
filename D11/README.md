@@ -5,8 +5,8 @@ Language: Python
 ---
 
 # Note
-- Part 2 is not complete
-- Need to find pattern to bypass the handling of extremely large numbers calculated
+- Part 2 was completed with help from  [William Y. Feng](https://www.youtube.com/watch?v=sBe_7Mzb47Y)
+- Had to use least common multiple to reduce humongous size of worry levels generated
 
 # Part 1
 As you finally start making your way upriver, you realize your pack is much lighter than you remember. Just then, one of the items from your pack goes flying overhead. Monkeys are playing Keep Away with your missing things!
