@@ -77,11 +77,12 @@ def move(grid, curRow, curCol, maxRow, maxCol):
     while queue:
         start, count = queue.pop(0)
 
+        if start.char == "E":
+            return count
+
         for i, j in movements:
             if 0 <= start.row + i < maxRow and 0 <= start.col + j < maxCol:
                 next = grid[start.row + i][start.col + j]
-                if start.char == "E":
-                    return count
                 if next.value - start.value <= 1 and next.visited == False:
                     next.visited = True
                     queue.append((next, count + 1))
