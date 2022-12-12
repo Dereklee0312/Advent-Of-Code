@@ -5,7 +5,7 @@ Language: Python
 ---
 
 # Note
-- Part 2 was completed with help from  [William Y. Feng](https://www.youtube.com/watch?v=sBe_7Mzb47Y)
+- Part 2 was completed with help from  [William Y. Feng](https://www.youtube.com/watch?v=63-uEScYUvM)
 - Had to use least common multiple to reduce humongous size of worry levels generated
 
 # Part 1
