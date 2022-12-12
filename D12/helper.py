@@ -58,6 +58,13 @@ def createDict():
 
 
 class Point:
+    """
+    Class to represent a point on the grid
+
+    - Used class to group all relevant attributes for each point and avoid
+      need of other variables to keep track of the latter
+    """
+
     def __init__(self, char, value, row, col):
         self.char = char
         self.visited = False
@@ -67,6 +74,11 @@ class Point:
 
 
 def move(grid, curRow, curCol, maxRow, maxCol):
+    """
+    BFS approach to find number of moves for shortest path
+    """
+    # Moves that can be made
+    # I.e, only horizontal and vertical
     movements = [(0, -1), (0, 1), (-1, 0), (1, 0)]
     curPos = grid[curRow][curCol]
 
@@ -75,20 +87,30 @@ def move(grid, curRow, curCol, maxRow, maxCol):
     curPos.visited = True
 
     while queue:
+        """
+        Keeping track of count and current point within Queue until target is reached
+        """
         start, count = queue.pop(0)
 
+        # Ending condition
+        # If E cannot be reached, function will return None
         if start.char == "E":
             return count
 
         for i, j in movements:
             if 0 <= start.row + i < maxRow and 0 <= start.col + j < maxCol:
                 next = grid[start.row + i][start.col + j]
+                # Check if next position is viable and unvisited
                 if next.value - start.value <= 1 and next.visited == False:
                     next.visited = True
                     queue.append((next, count + 1))
 
 
 def resetGrid(grid, maxRow, maxCol):
+    """
+    Function used to reset all points on grid to unvisited when checking paths for
+    each individual point with height 1
+    """
     for i in range(maxRow):
         for j in range(maxCol):
             grid[i][j].visited = False
