@@ -4,7 +4,7 @@ Date: 01-12-2022
 Language: Python, C#
 ---
 
-# First Attempt of AOC
+# First Attempt at AOC
 
 # TODO
 - Explain the thought process for each answer
