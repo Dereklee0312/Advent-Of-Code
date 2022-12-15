@@ -38,20 +38,15 @@ for cmd in lines:
                 if col > coords[i+1][1]:
                     b = -b
                 grid[row][col + b - mCol] = "#"
-            # if row != coords[i+1][0]:
-            #     for a in range(abs(row - coords[i+1][0]) + 1):
-            #         if row > coords[i+1][0]:
-            #             a = -a
-            #         grid[row + a][col - mCol] = "#"
-            # else:
-            #     for b in range(abs(col - coords[i+1][1]) + 1):
-            #         if col > coords[i+1][1]:
-            #             b = -b
-            #         grid[row][col - mCol + b] = "#"
+start = True
+count = -1
+while start:
+    count += 1
+    cont = moveSand(0, 500 - mCol, grid, MRow)
+    start = False if cont == -1 else True
+print(count)
 
-print(deltaRow, deltaCol)
-
-for i in range(deltaRow):
-    for j in range(deltaCol):
-        print(grid[i][j], end="")
-    print()
+# for i in range(deltaRow):
+#     for j in range(deltaCol):
+#         print(grid[i][j], end="")
+#     print()
