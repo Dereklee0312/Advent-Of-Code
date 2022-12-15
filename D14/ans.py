@@ -44,9 +44,10 @@ while start:
     count += 1
     cont = moveSand(0, 500 - mCol, grid, MRow)
     start = False if cont == -1 else True
-print(count)
 
 # for i in range(deltaRow):
 #     for j in range(deltaCol):
 #         print(grid[i][j], end="")
 #     print()
+
+print(count)
