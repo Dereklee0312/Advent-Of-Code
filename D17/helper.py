@@ -65,7 +65,7 @@ def moveHorizontal(dir: str, rock: Rock, grid: list[list[str]]):
     right = 1
     left = -1
     newPos = []
-    forbidden = ["|", "-", "#"]
+    skip = ["|", "#"]
     for row, col in rock.coords:
         if dir == ">":
             newCol = col + right
@@ -74,25 +74,38 @@ def moveHorizontal(dir: str, rock: Rock, grid: list[list[str]]):
         newPos.append((row, newCol))
 
     for row, col in newPos:
-        if grid[row][col] in forbidden:
-            return rock
+        if grid[row][col] in skip:
+            return rock, True
 
-    return Rock(newPos)
+    return Rock(newPos), True
 
 
 def moveVertical(rock: Rock, grid: list[list[str]]):
     newPos = []
-    forbidden = ["|", "-", "#"]
+    stop = ["-", "#"]
 
     for row, col in rock.coords:
         newRow = row + 1
         newPos.append((newRow, col))
 
     for row, col in newPos:
-        if grid[row][col] in forbidden:
-            return rock
+        if grid[row][col] in stop:
+            placeRock(rock, grid)
+            return rock, False
 
-    return Rock(newPos)
+    return Rock(newPos), True
+
+
+def placeRock(rock: Rock, grid: list[list[str]]):
+    for row, col in rock.coords:
+        grid[row][col] = "#"
+
+
+def findHighest(grid: list[list[str]]):
+    for row in range(len(grid)):
+        for col in range(len(grid[0])):
+            if grid[row][col] == "#":
+                return row
 
 
 def main():
