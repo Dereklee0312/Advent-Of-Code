@@ -29,6 +29,7 @@ The rocks don't spin, but they do get pushed around by jets of hot gas coming ou
 For example, suppose this was the jet pattern in your cave:
 
 ```>>><<><>><<<>><>>><<<>>><<<><<<>><>><<>>```
+
 In jet patterns, < means a push to the left, while > means a push to the right. The pattern above means that the jets will push a falling rock right, then right, then right, then left, then left, then right, and so on. If the end of the list is reached, it repeats.
 
 The tall, vertical chamber is exactly seven units wide. Each rock appears so that its left edge is two units away from the left wall and its bottom edge is three units above the highest rock in the room (or the floor, if there isn't one).
@@ -332,3 +333,10 @@ The moment each of the next few rocks begins falling, you would see this:
 To prove to the elephants your simulation is accurate, they want to know how tall the tower will get after 2022 rocks have stopped (but before the 2023rd rock begins falling). In this example, the tower of rocks will be 3068 units tall.
 
 ***How many units tall will the tower of rocks be after 2022 rocks have stopped falling?***
+
+# Part 2
+The elephants are not impressed by your simulation. They demand to know how tall the tower will be after 1000000000000 rocks have stopped! Only then will they feel confident enough to proceed through the cave.
+
+In the example above, the tower would be `1514285714288` units tall!
+
+***How tall will the tower be after `1000000000000` rocks have stopped?***
