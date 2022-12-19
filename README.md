@@ -18,3 +18,26 @@ Language: Python, C#
 
 - Day 11 [Got help from yt]
     - Part 2
+
+- Day 15
+
+- Day 16
+
+---
+
+# Learning Points
+
+## Graph Questions
+The graph does not need to be enclosed before manipulation. If satisfactory restrictions are given, it can be made to be grown dynamically through just a list or set of coordinates
+
+> EX: D17
+
+## Recursion
+
+## DFS and BFS
+
+## Caching to improve performance
+
+## Dynamic programming
+
+## Mathematical graph theory
