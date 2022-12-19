@@ -3,3 +3,6 @@
 from helper import *
 
 lines = parseFile()
+
+for cmd in lines:
+    print(cmd)
