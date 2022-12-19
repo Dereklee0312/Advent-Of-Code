@@ -4,9 +4,6 @@ from helper import *
 from functools import cmp_to_key
 
 lines = parseFile()
-left = []
-right = []
-
 sum = 0
 step = 0
 num = 0
@@ -35,14 +32,14 @@ else:
 lst.append([[2]])
 lst.append([[6]])
 
-lst = sorted(lst, key = cmp_to_key(compareLst), reverse = True)
+lst = sorted(lst, key=cmp_to_key(compareLst), reverse=True)
+
+target = [[[2]], [[6]]]
+
+ans = 1
+for i, L in enumerate(lst):
+    if L in target:
+        ans *= i + 1
 
 print("P1: ", sum)
-
-for i, L in enumerate(lst):
-    if L == [[2]]:
-        ans1 = i + 1
-    elif L == [[6]]:
-        ans2 = i + 1
-
-print("P2: ",ans1 * ans2)
+print("P2: ", ans)
