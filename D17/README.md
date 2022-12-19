@@ -335,7 +335,7 @@ To prove to the elephants your simulation is accurate, they want to know how tal
 ***How many units tall will the tower of rocks be after 2022 rocks have stopped falling?***
 
 # Part 2
-The elephants are not impressed by your simulation. They demand to know how tall the tower will be after 1000000000000 rocks have stopped! Only then will they feel confident enough to proceed through the cave.
+The elephants are not impressed by your simulation. They demand to know how tall the tower will be after `1000000000000` rocks have stopped! Only then will they feel confident enough to proceed through the cave.
 
 In the example above, the tower would be `1514285714288` units tall!
 
