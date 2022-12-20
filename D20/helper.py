@@ -15,12 +15,6 @@ def parseFile():
     return lines
 
 
-def findIndex(lst, num):
-    index = lst.index([False, num])
-
-    return index
-
-
 def whatNum(lst, cur, after):
     index = cur + after
     while index > len(lst) - 1:
