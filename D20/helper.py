@@ -21,3 +21,9 @@ def whatNum(lst, cur, after):
         index -= len(lst)
 
     return index
+
+def resetLst(lst):
+    for i in range(len(lst)):
+        lst[i][0] = False
+
+    return lst
