@@ -22,8 +22,30 @@ def whatNum(lst, cur, after):
 
     return index
 
+
 def resetLst(lst):
     for i in range(len(lst)):
         lst[i][0] = False
 
     return lst
+
+
+def mix(main, copy):
+    for i, (_, num) in enumerate(copy):
+        index = main.index([i, num])
+        removed = main.pop(index)
+        to = removed[1]
+
+        if abs(to) >= len(main):
+            to %= len(main)
+
+        if 0 < index + to <= len(main) - 1:
+            index += to
+        elif index + to < 0:
+            index += to + len(main)
+        elif index + to == 0:
+            index = len(main)
+        else:
+            index += to - len(main)
+
+        main.insert(index, removed)
