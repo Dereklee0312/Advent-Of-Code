@@ -35,29 +35,29 @@ def updateElves(elves, round):
     Function to generate a list of proposal positions for elves
     """
     newPos = {}
+    dups = []
+    checkElves = elves.copy()
 
     for id, (row, col) in elves.items():
         newRow, newCol = findNextPos(row, col, elves, round)
-        newPos[id] = [newRow, newCol]
+        # newPos[id] = [newRow, newCol]
 
-    while newPos:
-        checking = newPos.popitem()
-        r = checking[1][0]
-        c = checking[1][1]
-        id = checking[0]
-        toRemove = set()
-
-        for i, (row, col) in newPos.items():
-            if r == row and c == col:
-                toRemove.add(i)
-
-        if len(toRemove) == 0:
-            elves[id] = [r, c]
+        if [newRow, newCol] not in newPos.values() and [newRow, newCol] not in dups:
+            newPos[id] = [newRow, newCol]
         else:
-            for id in toRemove:
-                newPos.pop(id)
+            for i, (row, col) in newPos.items():
+                if newRow == row and newCol == col:
+                    break
+            newPos.pop(i)
+            dups.append([newRow, newCol])
 
-    return elves
+    for i, (row, col) in newPos.items():
+        elves[i] = [row, col]
+
+    if elves == checkElves:
+        return elves, False
+    else:
+        return elves, True
 
 
 def findNextPos(curRow, curCol, pts, round):

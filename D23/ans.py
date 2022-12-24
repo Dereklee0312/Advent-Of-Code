@@ -18,15 +18,22 @@ for row, line in enumerate(lines):
             elves[elfNum] = [row, col]
             elfNum += 1
 
-for i in range(10):
-    elves = updateElves(elves, i)
+cont = True
+round = 0
+while cont:
+    print(round, cont)
+    elves, cont = updateElves(elves, round)
+    round += 1
 
-count = 0
-mRow, mCol, MRow, MCol = findBoundaries(elves)
+print(round)
 
-for i in range(mRow, MRow + 1):
-    for j in range(mCol, MCol + 1):
-        if [i, j] not in elves.values():
-            count += 1
 
-print(count)
+# count = 0
+# mRow, mCol, MRow, MCol = findBoundaries(elves)
+#
+# for i in range(mRow, MRow + 1):
+#     for j in range(mCol, MCol + 1):
+#         if [i, j] not in elves.values():
+#             count += 1
+#
+# print(count)

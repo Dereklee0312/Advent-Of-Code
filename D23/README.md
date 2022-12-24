@@ -3,6 +3,10 @@ Title: Day Day of Advent of Code
 Date: 23-12-2022
 Language: Python
 ---
+# NOTE
+> Part 2 is very slow, took 24 mins to compute my answer
+
+> Need to optimize use of for loops
 
 # Part 1
 
@@ -208,3 +212,25 @@ To make sure they're on the right track, the Elves like to check after round 10 
 In this region, the number of empty ground tiles is 110.
 
 ***Simulate the Elves' process and find the smallest rectangle that contains the Elves after 10 rounds. How many empty ground tiles does that rectangle contain?***
+
+# Part 2
+It seems you're on the right track. Finish simulating the process and figure out where the Elves need to go. How many rounds did you save them?
+
+In the example above, the first round where no Elf moved was round 20:
+
+```
+.......#......
+....#......#..
+..#.....#.....
+......#.......
+...#....#.#..#
+#.............
+....#.....#...
+..#.....#.....
+....#.#....#..
+.........#....
+....#......#..
+.......#......
+```
+
+***Figure out where the Elves need to go. What is the number of the first round where no Elf moves?***
