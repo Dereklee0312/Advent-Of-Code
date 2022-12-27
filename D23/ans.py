@@ -27,7 +27,6 @@ while cont:
 
 print(round)
 
-
 # count = 0
 # mRow, mCol, MRow, MCol = findBoundaries(elves)
 #

@@ -1,5 +1,6 @@
 import sys
 
+
 def parseFile():
     if len(sys.argv) == 1:
         filename = "demo.txt"
@@ -13,10 +14,12 @@ def parseFile():
 
     return lines
 
+
 """
 Have to ensure all mathematical monkeys have already given an answer
 Can loop through each monkeys, those that have given their number are removed from list
 """
+
 
 def compute(monk1: int, monk2: int, op: str):
     if op == "+":
@@ -30,3 +33,9 @@ def compute(monk1: int, monk2: int, op: str):
 
     elif op == "/":
         return monk1 / monk2
+
+def giveSecond(given: str, inp: tuple):
+    if inp[0] == given:
+        return inp[2]
+    else:
+        return inp[0]

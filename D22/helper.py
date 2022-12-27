@@ -1,5 +1,6 @@
 import sys
 
+
 def parseFile():
     if len(sys.argv) == 1:
         filename = "demo.txt"
@@ -13,6 +14,7 @@ def parseFile():
 
     return lines
 
+
 def move(curPos, dir, amt, pts):
     map = {"E": (0, 1), "S": (1, 0), "W": (0, -1), "N": (-1, 0)}
 
@@ -22,7 +24,7 @@ def move(curPos, dir, amt, pts):
 
         if (nextRow, nextCol, "#") in pts:
             return curPos
-        elif  (nextRow, nextCol, ".") in pts:
+        elif (nextRow, nextCol, ".") in pts:
             curPos[0] = nextRow
             curPos[1] = nextCol
         else:
@@ -33,8 +35,8 @@ def move(curPos, dir, amt, pts):
                 curPos[0] = nextRow
                 curPos[1] = nextCol
 
-
     return curPos
+
 
 def rotate(curDir, dir):
     cardinals = ["E", "S", "W", "N"]
@@ -47,6 +49,7 @@ def rotate(curDir, dir):
         index = (map[curDir] - 1) % len(cardinals)
 
     return cardinals[index]
+
 
 def getWrap(curPos, dir, pts):
     if dir == "E" or dir == "W":

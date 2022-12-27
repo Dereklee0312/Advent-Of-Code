@@ -16,6 +16,7 @@ def parseFile():
 
 
 """
+PART 1
 - Need to represent each shape in a format that will allow movement vertically and horizontally
 - Need to keep track of height of highest rock
 - Need to rotate through list of rock types and Jet directions
@@ -29,6 +30,12 @@ def parseFile():
 
 - Might need to create an object for each shape when spawning it.
 - Can then easily modify the coordinates of the shape without having to keep track of individual points in the grid
+
+
+PART 2
+- Number of iterations is way too high (1000_000_000_000)
+- Need to find a pattern when stones are dropping
+- Pattern should match, current rock formation, rock spawned, jet direction
 """
 
 
@@ -54,7 +61,6 @@ def spawnRock(iter: int, top: int, grid: list[list[str]]):
     cycle = iter % 5
     for row, col in shapes[sLst[cycle]]:
         coords.append((top + row, col))
-        # grid[top + row][col] = "@"
 
     newRock = Rock(coords)
 
@@ -109,7 +115,6 @@ def findHighest(grid: list[list[str]]):
 
 
 def main():
-    # grid = [["." for _ in range(9)] for _ in range(2023 * 4 + 1)]
     grid = [["." for _ in range(9)] for _ in range(10)]
 
     for i in range(len(grid)):

@@ -31,6 +31,4 @@ while mathLst:
         monkLst[key] = result
 
 
-
-for (key, val) in monkLst.items():
-    print(key, val)
+print(monkLst["root"])

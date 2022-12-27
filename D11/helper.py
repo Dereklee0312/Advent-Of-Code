@@ -17,14 +17,10 @@ def parseFile():
 
 
 def multiply(num1, num2, divider):
-    # if num1 % divider == 0 or num2 % divider == 0:
-    #     return divider
     return num1 * num2
 
 
 def add(num1, num2, divider):
-    # if (num1 + num2) % divider == 0:
-    #     return divider
     return num1 + num2
 
 
@@ -71,7 +67,6 @@ class Monkey:
 
         self.turns += 1
         lvl = self.op(item, num, self.divider)
-        # print(self.divider)
         lvl = math.floor(lvl/division)
 
         if lvl % self.divider == 0:
