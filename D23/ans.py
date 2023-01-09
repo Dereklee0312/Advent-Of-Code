@@ -27,12 +27,12 @@ while cont:
 
 print(round)
 
-# count = 0
-# mRow, mCol, MRow, MCol = findBoundaries(elves)
-#
-# for i in range(mRow, MRow + 1):
-#     for j in range(mCol, MCol + 1):
-#         if [i, j] not in elves.values():
-#             count += 1
-#
-# print(count)
+count = 0
+mRow, mCol, MRow, MCol = findBoundaries(elves)
+
+for i in range(mRow, MRow + 1):
+    for j in range(mCol, MCol + 1):
+        if [i, j] not in elves.values():
+            count += 1
+
+print(count)
